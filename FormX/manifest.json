@@ -1,0 +1,28 @@
+{
+  "name": "FormX",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "sw.js"
+  },
+  "permissions": ["scripting", "webNavigation", "storage"],
+  "host_permissions": ["https://mdland.com/*"],
+  "action": {},
+  "content_scripts": [{
+    "matches" : ["https://login.mdland.com/login_central.aspx"],
+    "js" : ["content-script.js"],
+    "run_at": "document_end"
+  }],
+
+
+  "commands": {
+    "Ctrl+M": {
+        "suggested_key": {
+            "default": "Ctrl+M",
+            "mac": "Command+M"
+        },
+        "description": "Ctrl+M."
+    }
+  }
+
+}
